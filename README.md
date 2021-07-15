@@ -10,7 +10,7 @@
 
 #### 安装教程
 
-1.  xxxx
+1.  helloWorld
 2.  xxxx
 3.  xxxx
 
