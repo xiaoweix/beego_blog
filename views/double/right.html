@@ -1,0 +1,33 @@
+<aside class="right">
+  <div class="weather">
+  <iframe width="260" scrolling="no" height="100" frameborder="0" allowtransparency="true" src="http://i.tianqi.com/index.php?c=code&id=19&color=%23&bgc=%23&bdc=%23&icon=1&temp=0&num=2"></iframe>
+  </div>
+  <div class="news">
+    <h3><p>最新<span>文章</span></p></h3>
+    <ul class="rank">
+      {{range $k,$v := .latestblog}}
+          <li><a href="{{$v.Link}}" title="{{$v.Title}}">{{str2html $v.ColorTitle}}</a></li>
+     {{end}}
+    </ul>
+    <h3 class="ph"><p>点击<span>排行</span></p></h3>
+    <ul class="paih">
+      {{range $k,$v := .hotblog}}
+          <li><a href="{{$v.Link}}" title="{{$v.Title}}">{{str2html $v.ColorTitle}}</a></li>
+      {{end}}
+    </ul>
+
+    <h3 class="links">
+      <p>友情<span>链接</span></p>
+    </h3>
+    <ul class="website">
+      {{range $k,$v := .links}}
+      <li><a href="{{$v.Url}}" target="_blank" >{{$v.Sitename}}</a></li>
+      {{end}}
+    </ul>
+  
+  <a href="/" class="weixin"></a>
+  <div class="visitors">
+      <h3><p>最近访客</p></h3>
+      <ul class="ds-recent-visitors"  data-num-items="24"></ul>
+  </div>
+</aside>
