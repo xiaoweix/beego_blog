@@ -7,8 +7,8 @@ type PictureController struct {
 }
 
 func (this *PictureController) List() {
-	if this.Ctx.Input.RunMethod == "POST" {
-		f, h, err := this.GetFile("uploadname")
+	if this.Ctx.Request.Method == "POST" {
+		f, h, err := this.GetFile("picture")
 		if err != nil {
 			log.Fatal("getfile err ", err)
 			this.Abort("403")
