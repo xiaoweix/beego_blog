@@ -1,20 +1,22 @@
 package admin
 
 import (
-	"github.com/astaxie/beego"
-	"strings"
-	"strconv"
 	"beego_blog/models"
+	"strconv"
+	"strings"
+
+	"github.com/astaxie/beego"
 )
 
 type baseController struct {
 	beego.Controller
-	userid int
-	username string
+	userid         int
+	username       string
 	controllerName string
-	actionName string
-	pager *models.Pager
+	actionName     string
+	pager          *models.Pager
 }
+
 func (this *baseController) Prepare() {
 	//获取控制器名称和方法名称  IndexController_Index.html
 	//IndexController  LinkController TagController
@@ -29,7 +31,7 @@ func (this *baseController) Prepare() {
 	if err != nil {
 		page = 1
 	}
-	pagesize := 2
+	pagesize := 8
 	this.pager = models.NewPager(page, pagesize, 0, "")
 }
 
@@ -70,7 +72,7 @@ func (this *baseController) display(tplname ...string) {
 
 	if len(tplname) == 1 {
 		this.TplName = modileName + tplname[0] + ".html"
-	}else {
+	} else {
 		this.TplName = modileName + this.controllerName + "_" + this.actionName + ".html"
 	}
 }
