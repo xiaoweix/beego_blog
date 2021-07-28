@@ -25,7 +25,7 @@ func init() {
 	//"root:111111@tcp(127.0.0.1:3306)/HelloBeego?charset=utf8"
 	dburl := dbuser + ":" + dbpassword + "@tcp(" +
 		dbhost + ":" + dbport +  ")/" + dbname + "?charset=utf8"
-	fmt.Println("dburl = ", dburl)
+	//fmt.Println("dburl = ", dburl)
 	// set default database
 	orm.RegisterDataBase("default", "mysql", dburl, 30)
 
